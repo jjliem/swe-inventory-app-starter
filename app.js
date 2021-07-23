@@ -1,11 +1,11 @@
 const express = require('express');
 const Handlebars = require('handlebars');
 const expressHandlebars = require('express-handlebars');
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
-const {sequelize} = require('./db');
-const {Brand} = require('./models/Brand');
-const {Flavor} = require('./models/Flavor');
+const { sequelize } = require('./db');
+const { Brand } = require('./models/Brand');
+const { Flavor } = require('./models/Flavor');
 const seed = require('./seed')
 
 const PORT = 3000;
@@ -36,18 +36,18 @@ seed();
 
 // BRAND ROUTES ------------------------------------------------------------------------------------------------------------
 app.get('/brands', async (req, res) => {
-    const brands= await Brand.findAll()
-    res.render('brands', {brands}); //points to brands handlebar
+    const brands = await Brand.findAll()
+    res.render('brands', { brands }); //points to brands handlebar
 })
 
 app.get('/brands/:id', async (req, res) => {
     const brand = await Brand.findByPk(req.params.id, {
-        include:{
-        model:Flavor
-    }
-})
- console.log(brand);
-    res.render('brand', {brand}); 
+        include: {
+            model: Flavor
+        }
+    })
+    console.log(brand);
+    res.render('brand', { brand });
 })
 
 // FLAVOR ROUTES ------------------------------------------------------------------------------------------------------------
@@ -69,7 +69,7 @@ app.post('/new-flavor', async (req, res) => {
     let newFlavor = await Flavor.create(req.body)
     const foundNewFlavor = await Flavor.findByPk(newFlavor.id)
     //if new flavor was created, send 201 status
-    if(foundNewFlavor) {
+    if (foundNewFlavor) {
         res.status(201).send('New flavor success')
         //res.render('flavors')
     } else {
@@ -77,10 +77,27 @@ app.post('/new-flavor', async (req, res) => {
     }
 })
 
+// DELETE FLAVOR ROUTES -------------------------
+app.get('/delete-flavor-form', (req, res) => {
+    res.render('deleteflavorform')
+})
 
-
+app.delete('/deleted-flavor', async (req, res) => {
+    let deleteFlavor = await Flavor.destroy({
+        where: {
+            name: req.body.name
+        }
+    })
+    // const foundDeleteFlavor = await Flavor.findByPk(deleteFlavor.id)
+    // if (!foundDeleteFlavor) {
+    //     res.status(200).send('Flavor deleted!')
+    // } else {
+    //     console.error('Flavor not deleted')
+    // }
+    res.sendStatus(200);
+})
 
 app.listen(PORT, () => {
-    sequelize.sync({force: true});
+    sequelize.sync({ force: true });
     console.log(`Your server is running on http://localhost:${PORT}`);
 })
