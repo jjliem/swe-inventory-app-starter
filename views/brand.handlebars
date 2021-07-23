@@ -5,16 +5,20 @@
 </div> --}}
 
 <div>
-    <a class="btn" href="/brands">Back to Brands List</a>
-   
-	{{#each brand.Flavors}} 
+	<a class="btn" href="/brands">Back to Brands List</a>
+
+	{{#each brand.Flavors}}
 	<article class="clearfix item-container block">
 		<h2>Flavor: {{this.name}}</h2>
 		<img class="item-img" src="{{this.image}}" />
 		<h3>Price: ${{this.price}} </h3>
 		<h3>In Stock: {{this.quantity}} </h3>
+
+		<form action="/delete/{{this.id}}" method="POST">
+			<button class="btn btn-danger">Delete</button>
+		</form>
+
 	</article>
-    {{/each}}
+	{{/each}}
 
 </div>
-	
