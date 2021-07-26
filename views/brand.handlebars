@@ -5,7 +5,14 @@
 </div> --}}
 
 <div>
-	<a class="btn" href="/brands">Back to Brands List</a>
+	{{!-- <a class="btn" href="/brands">Back to Brands List</a>x --}}
+	<form action="/brands" method="GET">
+		<button class="btn btn-warning">Back to Brands List</button>
+	</form>
+	<br>
+	<form action="/new-flavor-form" method="GET">
+		<button class="btn btn-warning">Add Flavor</button>
+	</form>
 
 	{{#each brand.Flavors}}
 	<article class="clearfix item-container block">
