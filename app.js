@@ -17,7 +17,6 @@ const app = express();
 
 app.use(express.urlencoded())
 
-
 // setup our templating engine
 const handlebars = expressHandlebars({
     handlebars: allowInsecurePrototypeAccess(Handlebars)
@@ -30,74 +29,73 @@ app.use(express.static('public'));
 
 app.use(express.json());
 
-
-
 seed();
 
 // BRAND ROUTES ------------------------------------------------------------------------------------------------------------
+
+//View all brands
 app.get('/brands', async (req, res) => {
     const brands = await Brand.findAll()
     res.render('brands', { brands }); //points to brands handlebar
 
 })
 
+//View one brand
 app.get('/brands/:id', async (req, res) => {
     const brand = await Brand.findByPk(req.params.id, {
         include: {
             model: Flavor
         }
     })
-    res.render('brand', { brand });
+    if (brand) {
+        res.render('brand', { brand });
+    } else {
+        console.error('error viewing brand')
+    }
 })
 
 // FLAVOR ROUTES ------------------------------------------------------------------------------------------------------------
-// app.get('/flavors', async (req, res) => {
-//     const flavors = await Flavor.findAll();
-//     res.render('brands', {flavors})
-// });
 
-// app.get('/flavors/:id', async (req, res) => {
-//     const flavors= await Flavor.findByPk(req.params.id);
-//     res.render("brand", { flavors });
-// })
-
+//View form to create new flavor
 app.get('/new-flavor-form', (req, res) => {
     res.render('newflavorform')
 })
 
+//Create new flavor based on user input from form
 app.post('/new-flavor', async (req, res) => {
     let newFlavor = await Flavor.create(req.body)
     const foundNewFlavor = await Flavor.findByPk(newFlavor.id)
     //if new flavor was created, send 201 status
     if (foundNewFlavor) {
         res.status(201).send('New flavor success')
-        //res.render('flavors')
     } else {
-        console.error('flavor not created')
+        console.error('Flavor not created')
     }
 })
 
-//DELETE ROUTE VIA POST -----------------------------------------------------
-app.post('/delete/:id', async (req, res) => {
+//DELETE FLAVOR ROUTE VIA POST ----------------------------------------------------
 
+//Delete a flavor based on delete button
+app.post('/delete/:id', async (req, res) => {
     await Flavor.destroy({
         where: {
             id: req.params.id
         }
     });
-    //res.sendStatus(200);
     //redirect to list of brands instead of hitting backspace
     res.redirect('/brands');
 });
 
-//UPDATE ROUTE VIA POST -----------------------------------------------------
+//UPDATE FLAVOR ROUTE VIA POST -----------------------------------------------------
+
+//View form to update a flavor
 app.get('/update-flavor-form/:id', async (req, res) => {
-    //each update button is tied to a specific flavor, each flavor gets its own update form
+    //find flavor based on button pressed
     const flavor = await Flavor.findByPk(req.params.id)
-    //send specific flavor id to the update form
-    res.render('updateflavorform', { flavor });
+    res.render('updateflavorform', { flavor }); //send specific flavor id to the update form
 })
 
+//Update a flavor based on user input from form
 app.post('/update/:id', async (req, res) => {
     try {
         let updated = await Flavor.update(req.body, {

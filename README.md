@@ -1,15 +1,8 @@
 # swe-inventory-app-starter
-Boilerplate code for SWE Bootcamp Project
+SWE Bootcamp Project: A warehouse inventory system for ice cream brands and their flavors. Uses Sequelize, Express, and Handlebars to execute CRUD operations.
 
 ## How to use 
 1. Fork this repo
-2. Check out the sample task board.
+2. Check out the task board
 3. npm install
-4. Find your bliss!
-
-Linda's Edit: :)
-Tyson has made a change in the ReadMe
-Aden's edit :)
-Judith's edit :)
-Tyson 2
-Judith: practicing merge conflict
+4. Go to http://localhost:3000/brands in your browser
