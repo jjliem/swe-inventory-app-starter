@@ -1,0 +1,20 @@
+{{!-- able to access flavor.id because passed {flavor} to updateflavorform --}}
+<form action="/update/{{flavor.id}}" method="post">
+   <label for="name">Flavor Name:</label><br>
+   <input type="text" id="name" name="name" value="{{flavor.name}}" required><br>
+ 
+   <label for="image">Image URL:</label><br>
+   <input type="text" id="image" name="image" required>
+   <br>
+   <label for="quantity">Quantity:</label><br>
+   <input type="number" id="quantity" name="quantity" min="1" value="{{flavor.quantity}}" required><br>
+
+   <label for="name">Price:</label><br>
+   <input type="number" id="price" name="price" min="1" step="any" value="{{flavor.price}}" required><br>
+
+   <label for="BrandId"> Brand Id:</label><br>
+   <input type="number" id="BrandId" name="BrandId" min="1" value="{{flavor.BrandId}}" required><br>
+   <br>
+   <button type="submit" class="btn btn-primary">Submit</button>
+   
+</form>

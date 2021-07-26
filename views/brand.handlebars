@@ -18,6 +18,13 @@
 			<button class="btn btn-danger">Delete</button>
 		</form>
 
+		{{!-- send specific flavor id to its own update form --}}
+		<form action="/update-flavor-form/{{this.id}}" method="GET">
+			<button class="btn btn-warning">Update</button>
+		</form>
+		
+		
+
 	</article>
 	{{/each}}
 

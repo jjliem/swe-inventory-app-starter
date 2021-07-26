@@ -38,6 +38,7 @@ seed();
 app.get('/brands', async (req, res) => {
     const brands = await Brand.findAll()
     res.render('brands', { brands }); //points to brands handlebar
+
 })
 
 app.get('/brands/:id', async (req, res) => {
@@ -76,35 +77,39 @@ app.post('/new-flavor', async (req, res) => {
     }
 })
 
-// DELETE FLAVOR ROUTES -------------------------
-app.get('/delete-flavor-form', (req, res) => {
-    res.render('deleteflavorform')
-})
-
-app.delete('/deleted-flavor', async (req, res) => {
-    let deleteFlavor = await Flavor.destroy({
-        where: {
-            name: req.body.name
-        }
-    })
-    // const foundDeleteFlavor = await Flavor.findByPk(deleteFlavor.id)
-    // if (!foundDeleteFlavor) {
-    //     res.status(200).send('Flavor deleted!')
-    // } else {
-    //     console.error('Flavor not deleted')
-    // }
-    res.sendStatus(200);
-})
-
 //DELETE ROUTE VIA POST -----------------------------------------------------
 app.post('/delete/:id', async (req, res) => {
+
     await Flavor.destroy({
         where: {
             id: req.params.id
         }
     });
     //res.sendStatus(200);
+    //redirect to list of brands instead of hitting backspace
     res.redirect('/brands');
+});
+
+//UPDATE ROUTE VIA POST -----------------------------------------------------
+app.get('/update-flavor-form/:id', async (req, res) => {
+    //each update button is tied to a specific flavor, each flavor gets its own update form
+    const flavor = await Flavor.findByPk(req.params.id)
+    //send specific flavor id to the update form
+    res.render('updateflavorform', { flavor });
+})
+
+app.post('/update/:id', async (req, res) => {
+    try {
+        let updated = await Flavor.update(req.body, {
+            where: { id: req.params.id } // Update a flavor where the id matches, based on req.body
+        })
+        res.redirect('/brands/' + req.body.BrandId)
+    } catch (err) {
+        //sends error to console.log
+        console.error("Error with updating a flavor: " + err);
+        //sends error to browser
+        res.send("Error with updating a flavor: " + err)
+    }
 });
 
 app.listen(PORT, () => {
