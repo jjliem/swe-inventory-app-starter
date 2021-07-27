@@ -1,19 +1,35 @@
 {{!-- <div>
-    {{#each brands}}
-        <div>
-            <a href="/brands/{{id}}">Click to see {{name}}</a>
-        </div>
-    {{/each}}
+	{{#each brands}}
+	<div>
+		<a href="/brands/{{id}}">Click to see {{name}}</a>
+	</div>
+	{{/each}}
 </div> --}}
 
 
-<section>
-	<h2> There are {{brands.length}} brands</h2>
-	{{#each brands}} 
-		<article class="clearfix item-container block">
-			<h2>{{name}}</h2>
-            <img class="item-img" src="{{image}}" />
-			<a class="btn" href="/brands/{{id}}">Click to see {{name}}</a>
-		</article>
-		{{/each}}
-	</section> 
+{{!-- <section id="products">
+	<h2> Our Products</h2>
+	{{#each brands}}
+	<article class="clearfix item-container block">
+		<h2>{{name}}</h2>
+		<img class="item-img" src="{{image}}" />
+		<a class="btn" href="/brands/{{id}}">Click to see {{name}}</a>
+	</article>
+	{{/each}}
+</section> --}}
+
+
+<section id="products">
+	<h2 id="producttitle"> Our Products</h2>
+	{{#each brands}}
+	<article class="clearfix item-container block">
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">{{name}}</h5>
+				<img class="item-img" src="{{image}}" />
+				<a href="/brands/{{id}}" <button type="button" class="btn btn-success">Click to see {{name}}</button></a>
+			</div>
+		</div>
+	</article>
+	{{/each}}
+</section>

@@ -7,11 +7,11 @@
 <div>
 	{{!-- <a class="btn" href="/brands">Back to Brands List</a>x --}}
 	<form action="/brands" method="GET">
-		<button class="btn btn-warning">Back to Brands List</button>
+		<button class="btn btn-success">Back to Brands List</button>
 	</form>
 	<br>
 	<form action="/new-flavor-form" method="GET">
-		<button class="btn btn-warning">Add Flavor</button>
+		<button class="btn btn-success">Add Flavor</button>
 	</form>
 
 	{{#each brand.Flavors}}
@@ -21,16 +21,18 @@
 		<h3>Price: ${{this.price}} </h3>
 		<h3>In Stock: {{this.quantity}} </h3>
 
+		{{!-- delete button  --}}
+
 		<form action="/delete/{{this.id}}" method="POST">
 			<button class="btn btn-danger">Delete</button>
 		</form>
 
-		{{!-- send specific flavor id to its own update form --}}
+		{{!-- update button  --}}
+		
 		<form action="/update-flavor-form/{{this.id}}" method="GET">
-			<button class="btn btn-warning">Update</button>
+			<button class="btn btn-success">Update</button>
 		</form>
-		
-		
+	
 
 	</article>
 	{{/each}}
