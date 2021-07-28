@@ -13,23 +13,27 @@
 	<article class="clearfix item-container block">
 		<h2>{{name}}</h2>
 		<img class="item-img" src="{{image}}" />
-		<a class="btn" href="/brands/{{id}}">Click to see {{name}}</a>
+		<a id="btnn" class="btn" href="/brands/{{id}}">View {{name}} Flavor</a>
 	</article>
 	{{/each}}
 </section> --}}
 
 
-<section id="products">
-	<h2 id="producttitle"> Our Products</h2>
+<section >
+	<h2 id="ptitle"> Our Top Quality Ice Cream Brands</h2>
+	<br>
 	{{#each brands}}
-	<article class="clearfix item-container block">
-		<div class="card" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title">{{name}}</h5>
+	<article class="item-container block" style='text-align:center'>
+		<div id="card" class="card" >
+				<div class="card-body">
+				<h2 id="pnames">{{name}}</h2>
 				<img class="item-img" src="{{image}}" />
-				<a href="/brands/{{id}}" <button type="button" class="btn btn-success">Click to see {{name}}</button></a>
+				<a id="btnn" class="btn" href="/brands/{{id}}">View {{name}} Flavors</a>
 			</div>
 		</div>
 	</article>
 	{{/each}}
 </section>
+
+
+
