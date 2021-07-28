@@ -1,9 +1,9 @@
 {
   "data": [
     {
-      "name": "Dairy Queen",
-      "image": "https://cdn.worldvectorlogo.com/logos/dairy-queen-logo.svg",
-      "flavors": [
+      "name": "Haagen-Dazs",
+      "image": "https://www.nestle.com/sites/default/files/haagen-dazs-logo-round-2021.png",
+            "flavors": [
         {
           "name": "Chocolate",
           "price": 6.50,
@@ -87,8 +87,8 @@
       ]
     },
     {
-      "name": "Haagen-Dazs",
-      "image": "https://www.nestle.com/sites/default/files/haagen-dazs-logo-round-2021.png",
+      "name": "Magnum",
+      "image": "https://pbs.twimg.com/profile_images/1154022165949423616/ttYGBBGT_400x400.png",
       "flavors": [
         {
           "name": "Chocolate",
@@ -173,8 +173,8 @@
       ]
     },
     {
-      "name": "Magnum",
-      "image": "https://pbs.twimg.com/profile_images/1154022165949423616/ttYGBBGT_400x400.png",
+      "name":  "Dairy Queen",
+      "image": "https://cdn.worldvectorlogo.com/logos/dairy-queen-logo.svg",
       "flavors":[
         {
           "name": "Chocolate",
@@ -217,7 +217,7 @@
     },
     {
       "name": "Baskin-Robbins",
-      "image": "https://lh3.googleusercontent.com/proxy/gE867mig3ZiHJ8xODtef-sUx4T9u4OeJoJyw92Rz6tsdWoezglQGZMBr4xjnuPDWSm-5rx7bkhVQmOihx70KcBFeoW7DcXu8bipIPgAvuJEaNyXWoxmFrvEs5XGPQQ",
+      "image": "https://www.seekpng.com/png/detail/281-2819372_symbol-baskin-robbins-logo.png",
       "flavors": [
         {
           "name": "Chocolate",

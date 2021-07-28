@@ -1,39 +1,37 @@
-{{!-- <div>
-	{{#each brands}}
-	<div>
-		<a href="/brands/{{id}}">Click to see {{name}}</a>
-	</div>
-	{{/each}}
-</div> --}}
-
-
-{{!-- <section id="products">
-	<h2> Our Products</h2>
-	{{#each brands}}
-	<article class="clearfix item-container block">
-		<h2>{{name}}</h2>
-		<img class="item-img" src="{{image}}" />
-		<a id="btnn" class="btn" href="/brands/{{id}}">View {{name}} Flavor</a>
-	</article>
-	{{/each}}
-</section> --}}
-
-
-<section >
-	<h2 id="ptitle"> Our Top Quality Ice Cream Brands</h2>
-	<br>
-	{{#each brands}}
-	<article class="item-container block" style='text-align:center'>
-		<div id="card" class="card" >
-				<div class="card-body">
-				<h2 id="pnames">{{name}}</h2>
-				<img class="item-img" src="{{image}}" />
-				<a id="btnn" class="btn" href="/brands/{{id}}">View {{name}} Flavors</a>
+{{!-- START NAVBAR --}}
+<div class="row">
+	<div class="col">
+		<div class="bg-img">
+			<div class="container">
+				<div class="topnav">
+					<a href="/brands">Home</a>
+					<a href="/login-form">Login</a>
+					<a href="/new-flavor-form">Add New Flavor</a>
+					<a href="#about">About</a>
+					<a href="#contact">Contact</a>
+				</div>
 			</div>
 		</div>
-	</article>
-	{{/each}}
-</section>
+	</div>
+</div>
+{{!-- END NAVBAR --}}
 
-
-
+<div class="row">
+	<div class="col">
+		<section>
+			<h2 id="ptitle"> Our Top Quality Ice Cream Brands</h2>
+			<br>
+			{{#each brands}}
+			<article class="item-container block" style='text-align:center'>
+				<div id="card" class="card">
+					<div class="card-body">
+						<h2 id="pnames">{{name}}</h2>
+						<img class="item-img" src="{{image}}" />
+						<a id="btnn" class="btn" href="/brands/{{id}}">View {{name}} Flavors</a>
+					</div>
+				</div>
+			</article>
+			{{/each}}
+		</section>
+	</div>
+</div>

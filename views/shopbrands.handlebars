@@ -1,14 +1,36 @@
-<section id="products">
-	<h2 id="producttitle"> Our Products</h2>
-	{{#each brands}}
-	<article class="clearfix item-container block">
-		<div class="card" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title">{{name}}</h5>
-				<img class="item-img" src="{{image}}" />
-				<a href="/shop-brands/{{id}}" <button type="button" class="btn btn-success">Click to see {{name}}</button></a>
+{{!-- START NAVBAR --}}
+<div class="row">
+	<div class="col">
+		<div class="bg-img">
+			<div class="container">
+				<div class="topnav">
+					<a href="/shop-brands">Home</a>
+					<a href="/login-form">Login</a>
+					<a href="#about">About</a>
+					<a href="#contact">Contact</a>
+				</div>
 			</div>
 		</div>
-	</article>
-	{{/each}}
-</section>
+	</div>
+</div>
+{{!-- END NAVBAR --}}
+
+<div class="row">
+	<div class="col">
+		<section>
+			<h2 id="ptitle"> Our Top Quality Ice Cream Brands</h2>
+			<br>
+			{{#each brands}}
+			<article class="item-container block" style='text-align:center'>
+				<div id="card" class="card">
+					<div class="card-body">
+						<h2 id="pnames">{{name}}</h2>
+						<img class="item-img" src="{{image}}" />
+						<a id="btnn" class="btn" href="/shop-brands/{{id}}">View {{name}} Flavors</a>
+					</div>
+				</div>
+			</article>
+			{{/each}}
+		</section>
+	</div>
+</div>
