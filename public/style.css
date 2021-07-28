@@ -1,8 +1,4 @@
 
-/* body {
-  background-color: thistle;  
-} */
-
 #products {
 
     font-family: monospace;
@@ -51,10 +47,10 @@ h1, h2 {
 }
 
 .item-img {
-  width: 225px;
-  padding: 0 10px;
   float: left;
-  height: 225px;
+  width: 250px;
+  height: 250px; 
+  object-fit: cover;
   background-repeat: no-repeat;
   background-size: 225px;
 }

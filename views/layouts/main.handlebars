@@ -2,18 +2,18 @@
 <html>
 
 <head>
-
+    {{!-- BOOTSTRAP STYLESHEET --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css" />
-
     {{!-- ICON STYLESHEET --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
+    {{!-- CUSTOM STYLESHEET --}}
+    <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
+    {{!-- START NAVBAR --------------------------------------------------------------------------------------}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -45,6 +45,8 @@
             </ul>
         </div>
     </nav>
+    {{!-- START NAVBAR --------------------------------------------------------------------------------------}}
+
     <h1 id="title">Multicecream</h1>
     <br>
     <br>
@@ -59,7 +61,7 @@
     </div> --}}
 
 
-  
+
     <div class="row">
         <div class="col">
             {{{body}}}
@@ -146,7 +148,16 @@
                     {{!-- Grid column --}}
                 </div>
             </section>
-
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col">
+                    <div class="copyright">
+                        © 2021 Copyright:
+                        <a class="text-reset fw-bold" href="#">Mighty Mangoes</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
         </div>
     </footer>
     {{!-- END FOOTER ------------------------------------------------------------------------------------------}}

@@ -2,7 +2,7 @@
   "data": [
     {
       "name": "Dairy Queen",
-      "image": "https://1000logos.net/wp-content/uploads/2020/12/Dairy-Queen-Font.jpg",
+      "image": "https://cdn.worldvectorlogo.com/logos/dairy-queen-logo.svg",
       "flavors": [
         {
           "name": "Chocolate",
@@ -45,7 +45,7 @@
     },
     {
       "name": "Ben & Jerry's",
-      "image": "https://img.favpng.com/4/0/9/ben-jerry-s-ice-cream-brand-food-wall-s-png-favpng-RcSZuQ3sP05STv5YWqsVqqkjU.jpg",
+      "image": "https://cdn.freebiesupply.com/logos/large/2x/ben-jerrys-2-logo-png-transparent.png",
       "flavors": [
         {
           "name": "Chocolate",
@@ -88,7 +88,7 @@
     },
     {
       "name": "Haagen-Dazs",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/H%C3%A4agen-Dazs_Logo.svg/1200px-H%C3%A4agen-Dazs_Logo.svg.png",
+      "image": "https://www.nestle.com/sites/default/files/haagen-dazs-logo-round-2021.png",
       "flavors": [
         {
           "name": "Chocolate",
@@ -217,7 +217,7 @@
     },
     {
       "name": "Baskin-Robbins",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Baskin-Robbins_logo.svg/1200px-Baskin-Robbins_logo.svg.png",
+      "image": "https://lh3.googleusercontent.com/proxy/gE867mig3ZiHJ8xODtef-sUx4T9u4OeJoJyw92Rz6tsdWoezglQGZMBr4xjnuPDWSm-5rx7bkhVQmOihx70KcBFeoW7DcXu8bipIPgAvuJEaNyXWoxmFrvEs5XGPQQ",
       "flavors": [
         {
           "name": "Chocolate",
