@@ -5,4 +5,4 @@ SWE Bootcamp Project: A warehouse inventory system for ice cream brands and thei
 1. Fork this repo
 2. Check out the task board
 3. npm install
-4. Go to http://localhost:3000/brands in your browser
+4. Deployed at http://multicecream.herokuapp.com/login-form
