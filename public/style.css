@@ -1,35 +1,41 @@
 
-#products {
 
-    font-family: monospace;
-    color: green;
+#ptitle {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 130px;
+  font-size: 40px;
+color:  #333
 }
-h1, h2 {
-  font-family: "Helvetica Neue", sans-serif;
-  font-weight: 100;
-}
-
-#title {
-
-  margin-left: 300px;
-  font-family: "Lucida Handwriting";
-  font-size: 70px;
-  margin-top: 40px;
-  color: hotpink
-  }
-
-#producttitle
-{
-  margin-left: 350px;
-  font-size:45px;
+#pnames {
+font-family: "Lucida Handwriting";
+text-align: center;
+color:  #333;
+font-size: 25px;
 }
 
-/* body {
-  background-image: url("https://images.unsplash.com/photo-1602296751206-d611e4b4fe89?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGljZSUyMGNyZWFtJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60");
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-size: cover;
-} */
+
+#card {
+  
+  border: 3px solid	 #333;
+
+  margin: 1px;
+
+}
+
+
+
+#btnn {
+  color: white;
+  /* font: 15px Futura, sans-serif; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  align-self: center;
+  /* background: #8B4513; */
+  background: #333;
+  margin: 15px 0px 0px;
+  padding: 10px 25px
+
+}
 
 
 .block {
@@ -47,13 +53,14 @@ h1, h2 {
 }
 
 .item-img {
-  float: left;
   width: 250px;
   height: 250px; 
   object-fit: cover;
   background-repeat: no-repeat;
-  background-size: 225px;
+  background-size: 225px
 }
+
+
 
 #btn {
   display: inline-block;
@@ -63,6 +70,7 @@ h1, h2 {
   text-align:  center;
   box-shadow: 1px #d3d3d3;
   clear:  both;
+  text-align: center;
 }
 
 label, select {
@@ -83,4 +91,62 @@ footer {
 
 .useful-links > p > a {
   color: black;
+}
+
+
+
+/* NAV */
+
+.bg-img {
+  /* The image used */
+  /* background-image: url("https://colorlib.com/wp/wp-content/uploads/sites/2/4_ice-cream-websites.jpg.webp"); */
+  background-image: url("logo2.PNG");
+  min-height: 410px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+/* Position the navbar container inside the image */
+.container {
+  position: absolute;
+  margin: 20px;
+  width: auto;
+}
+
+/* The navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.block {
+  width: 30vw;
+  float: left;
+}
+
+.big-block {
+  width: 60vw;
+  float: left;
 }

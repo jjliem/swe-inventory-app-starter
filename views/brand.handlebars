@@ -1,40 +1,59 @@
 {{!-- <div class="big-block">
 	<h2 id="item-name">{{brand.name}}</h2>
-	<img class="item-img" src="{{brand.image}}"/>
-    <button id="btn">Add Flavor!</button>
+	<img class="item-img" src="{{brand.image}}" />
+	<button id="btn">Add Flavor!</button>
 </div> --}}
 
 <div>
 	{{!-- <a class="btn" href="/brands">Back to Brands List</a>x --}}
-	<form action="/brands" method="GET">
-		<button class="btn btn-success">Back to Brands List</button>
-	</form>
-	<br>
+	
+	{{!-- <form action="/brands" method="GET">
+		<button id="form" id="btnn" class="btn">Back to Brands List</button>
+	</form> --}}
+	
 	<form action="/new-flavor-form" method="GET">
-		<button class="btn btn-success">Add Flavor</button>
+		<button   id="btnn" class="btn">Add Flavor</button>
 	</form>
+  
 
 	{{#each brand.Flavors}}
-	<article class="clearfix item-container block">
-		<h2>Flavor: {{this.name}}</h2>
-		<img class="item-img" src="{{this.image}}" />
-		<h3>Price: ${{this.price}} </h3>
-		<h3>In Stock: {{this.quantity}} </h3>
+	<article class="item-container block" style='text-align:center'>
+		<div id="card"  class="card" >
+				<div class="card-body">
+				
+				<img class="item-img" src="{{this.image}}" />
+		
+				<p><h2><b>{{this.name}}</b> </h2></p>
+				
+				<h3>Price: ${{this.price}} </h3>
+				<h3>In Stock: {{this.quantity}} </h3>
+			</div>
+		</div>
 
-		{{!-- delete button  --}}
+		{{!-- delete button --}}
 
 		<form action="/delete/{{this.id}}" method="POST">
-			<button class="btn btn-danger">Delete</button>
+			<button id="btnn"  class="btn">Delete</button>
 		</form>
 
-		{{!-- update button  --}}
-		
+		{{!-- update button --}}
+
 		<form action="/update-flavor-form/{{this.id}}" method="GET">
-			<button class="btn btn-success">Update</button>
+			<button id="btnn" class="btn">Update</button>
 		</form>
-	
+
 
 	</article>
 	{{/each}}
 
 </div>
+
+{{!-- <div id="card" class="card">
+	<div class="card-body">
+		<h2 id="pnames">{{name}}</h2>
+		<img class="item-img" src="{{image}}" />
+		<a id="btnn" class="btn" href="/brands/{{id}}">View {{name}} Flavors</a>
+	</div>
+</div> --}}
+
+
