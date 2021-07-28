@@ -1,21 +1,13 @@
 const express = require('express');
+const app = express();
+
 const Handlebars = require('handlebars');
 const expressHandlebars = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
 const { sequelize } = require('./db');
-const { Brand } = require('./models/Brand');
-const { Flavor } = require('./models/Flavor');
+const { Brand, Flavor, User, Manager, Customer } = require('./models/index.js');
 const seed = require('./seed')
-
-const PORT = 3000;
-
-const initialiseDb = require('./initialiseDb');
-initialiseDb();
-
-const app = express();
-
-app.use(express.urlencoded())
 
 // setup our templating engine
 const handlebars = expressHandlebars({
@@ -26,8 +18,12 @@ app.set('view engine', 'handlebars');
 
 // serve static assets from the public/ folder
 app.use(express.static('public'));
-
+// parses incoming requests with urlencoded payloads, allows objects
+app.use(express.urlencoded())
+// parses incoming requests with JSON payloads, allows JSON
 app.use(express.json());
+
+const PORT = 3000;
 
 seed();
 

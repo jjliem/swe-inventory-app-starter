@@ -1,7 +1,6 @@
 const {Sequelize, DataTypes, Model} = require('sequelize')
 const {sequelize} = require('../db')
 
-
 class Flavor extends Model {}
 
 Flavor.init({

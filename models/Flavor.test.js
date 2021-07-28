@@ -11,5 +11,4 @@ describe('Flavor Model', () => {
 		expect(testFlavor.name).toBe('Chocolate')
 	})
 
-
 })
