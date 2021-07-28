@@ -7,7 +7,8 @@ class Customer extends User {}
 Customer.init({
     email: DataTypes.STRING,
     password: DataTypes.STRING,
-    coupon: DataTypes.STRING
+    userType: DataTypes.STRING,
+    coupon: DataTypes.STRING,
 }, {
     sequelize,
     timestamps: false,

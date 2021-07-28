@@ -7,7 +7,8 @@ class Manager extends User {}
 Manager.init({
     email: DataTypes.STRING,
     password: DataTypes.STRING,
-    authorization: DataTypes.STRING,
+    userType: DataTypes.STRING,
+    authorization: DataTypes.STRING
 }, {
     sequelize,
     timestamps: false,

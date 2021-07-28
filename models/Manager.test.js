@@ -7,9 +7,10 @@ describe('Manager Model', () => {
 	});
 
 	test('can create a Manager', async() => {
-		const testManager = await Manager.create({email : 'admin@google.com', password : '123456', authorization: 'abc'});
+		const testManager = await Manager.create({email : 'admin@google.com', password : '123456', userType: 'manager', authorization: 'abc'});
         expect(testManager.email).toBe('admin@google.com')
         expect(testManager.password).toBe('123456')
+        expect(testManager.userType).toBe('manager')
         expect(testManager.authorization).toBe('abc')
 	})
 

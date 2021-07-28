@@ -29,14 +29,14 @@ seed();
 
 // BRAND ROUTES ------------------------------------------------------------------------------------------------------------
 
-//View all brands
+//View all brands as manager
 app.get('/brands', async (req, res) => {
     const brands = await Brand.findAll()
     res.render('brands', { brands }); //points to brands handlebar
 
-})
+});
 
-//View one brand
+//View one brand as manager
 app.get('/brands/:id', async (req, res) => {
     const brand = await Brand.findByPk(req.params.id, {
         include: {
@@ -48,14 +48,35 @@ app.get('/brands/:id', async (req, res) => {
     } else {
         console.error('error viewing brand')
     }
-})
+});
+
+//View all brands as customer
+app.get('/shop-brands', async (req, res) => {
+    const brands = await Brand.findAll()
+    res.render('shopbrands', { brands }); //points to brands handlebar
+
+});
+
+//View one brand as customer
+app.get('/shop-brands/:id', async (req, res) => {
+    const brand = await Brand.findByPk(req.params.id, {
+        include: {
+            model: Flavor
+        }
+    })
+    if (brand) {
+        res.render('shopbrand', { brand });
+    } else {
+        console.error('error viewing brand')
+    }
+});
 
 // FLAVOR ROUTES ------------------------------------------------------------------------------------------------------------
 
 //View form to create new flavor
 app.get('/new-flavor-form', (req, res) => {
     res.render('newflavorform')
-})
+});
 
 //Create new flavor based on user input from form
 app.post('/new-flavor', async (req, res) => {
@@ -67,7 +88,7 @@ app.post('/new-flavor', async (req, res) => {
     } else {
         console.error('Flavor not created')
     }
-})
+});
 
 //DELETE FLAVOR ROUTE VIA POST ----------------------------------------------------
 
@@ -89,7 +110,7 @@ app.get('/update-flavor-form/:id', async (req, res) => {
     //find flavor based on button pressed
     const flavor = await Flavor.findByPk(req.params.id)
     res.render('updateflavorform', { flavor }); //send specific flavor id to the update form
-})
+});
 
 //Update a flavor based on user input from form
 app.post('/update/:id', async (req, res) => {
@@ -105,6 +126,26 @@ app.post('/update/:id', async (req, res) => {
         res.send("Error with updating a flavor: " + err)
     }
 });
+
+//LOGIN ROUTE -------------------------------------------------------------------------------------
+//View form to login
+app.get('/login-form', (req, res) => {
+    res.render('loginform')
+});
+
+//View corresponding brands page as manager or customer after login
+app.post('/login', async (req, res) => {
+    //TODO: add email/password validation
+    if (req.body.userType == 'manager') {
+        res.redirect('./brands')
+    } else if (req.body.userType == 'customer') {
+        res.redirect('./shop-brands')
+    } else {
+        console.error('Possible invalid userType: ' + req.body.userType)
+    }
+});
+
+
 
 app.listen(PORT, () => {
     sequelize.sync({ force: true });

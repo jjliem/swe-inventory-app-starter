@@ -1,0 +1,14 @@
+<section id="products">
+	<h2 id="producttitle"> Our Products</h2>
+	{{#each brands}}
+	<article class="clearfix item-container block">
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">{{name}}</h5>
+				<img class="item-img" src="{{image}}" />
+				<a href="/shop-brands/{{id}}" <button type="button" class="btn btn-success">Click to see {{name}}</button></a>
+			</div>
+		</div>
+	</article>
+	{{/each}}
+</section>

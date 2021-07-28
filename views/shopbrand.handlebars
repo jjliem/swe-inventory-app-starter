@@ -1,0 +1,23 @@
+<div>
+	<form action="/shop-brands" method="GET">
+		<button class="btn btn-success">Back to Brands List</button>
+	</form>
+
+	{{#each brand.Flavors}}
+	<article class="clearfix item-container block">
+		<h2>Flavor: {{this.name}}</h2>
+		<img class="item-img" src="{{this.image}}" />
+		<h3>Price: ${{this.price}} </h3>
+		<h3>In Stock: {{this.quantity}} </h3>
+
+		{{!-- add to cart button  --}}
+
+		{{!-- TODO: Write add to cart functionality --}}
+		<form action="/add-cart" method="POST">
+			<button class="btn btn-default">Add to Cart</button>
+		</form>
+
+	</article>
+	{{/each}}
+
+</div>
