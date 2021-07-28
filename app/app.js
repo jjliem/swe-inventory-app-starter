@@ -5,9 +5,9 @@ const Handlebars = require('handlebars');
 const expressHandlebars = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 
-const { sequelize } = require('./db');
-const { Brand, Flavor, User, Manager, Customer } = require('./models/index.js');
-const seed = require('./seed')
+const { sequelize } = require('../db');
+const { Brand, Flavor, User, Manager, Customer } = require('../models/index.js');
+const seed = require('../seed')
 
 // setup our templating engine
 const handlebars = expressHandlebars({
@@ -23,7 +23,7 @@ app.use(express.urlencoded())
 // parses incoming requests with JSON payloads, allows JSON
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 seed();
 
