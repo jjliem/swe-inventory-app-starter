@@ -2,13 +2,10 @@ const path = require('path');
 const fs = require('fs').promises;
 
 const {sequelize} = require('./db');
-const {Brand} = require('./models/Brand');
-const {Flavor} = require('./models/Flavor');
+const {Brand, Flavor} = require('./models/index.js');
 
-const initialiseDb = require('./initialiseDb');
 
 const seed = async () => {
-    await initialiseDb();
 
     await sequelize.sync({ force: true });
 

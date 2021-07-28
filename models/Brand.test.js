@@ -11,5 +11,4 @@ describe('Brand Model', () => {
 		expect(testBrand.name).toBe('Magnum')
 	})
 
-
 })

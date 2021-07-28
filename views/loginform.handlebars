@@ -1,0 +1,36 @@
+{{!-- START NAVBAR --}}
+<div class="row">
+   <div class="col">
+      <div class="bg-img">
+         <div class="container">
+            <div class="topnav">
+               <a href="/login-form">Login</a>
+               <a href="#about">About</a>
+               <a href="#contact">Contact</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{{!-- END NAVBAR --}}
+<div class="row">
+   <div class="col">
+      <form action="/login" method="post">
+         <label for="email">Email:</label><br>
+         <input type="text" id="email" name="email" required><br>
+
+         <label for="impasswordage">Password:</label><br>
+         <input type="text" id="password" name="password" required><br>
+
+         <p>User Type:</p>
+         <input type="radio" id="userType" name="userType" value="manager">
+         <label for="userType">Manager</label>
+
+         <input type="radio" id="userType" name="userType" value="customer">
+         <label for="userType">Customer</label><br>
+
+         <button type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+   </div>
+</div>
