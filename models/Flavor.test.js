@@ -11,4 +11,10 @@ describe('Flavor Model', () => {
 		expect(testFlavor.name).toBe('Chocolate')
 	})
 
+	test('can create Brand image ', async () => {
+        await sequelize.sync({ force: true }); 
+        const testFlavorimage = await  Flavor.create({ name: 'Chocolate', image: 'https://www.modernhoney.com/wp-content/uploads/2018/08/Homemade-Chocolate-Ice-Cream-1.jpg' })
+        expect(testFlavorimage.id).toBe(1)
+    })
+
 })
