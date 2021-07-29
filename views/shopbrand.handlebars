@@ -30,15 +30,16 @@
 						</p>
 
 						<h3>Price: ${{this.price}} </h3>
+
+						{{!-- add to cart button --}}
+
+						{{!-- TODO: Write add to cart functionality --}}
+						<form action="/add-cart" method="POST">
+							<button class="btn">Add To Cart</button>
+						</form>
+
 					</div>
 				</div>
-
-				{{!-- add to cart button --}}
-
-				{{!-- TODO: Write add to cart functionality --}}
-				<form action="/add-cart" method="POST">
-					<button id="btnn" class="btn">Add To Cart</button>
-				</form>
 
 			</article>
 			{{/each}}
