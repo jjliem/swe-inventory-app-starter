@@ -2,7 +2,7 @@
 
 #ptitle {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  margin-left: 130px;
+  margin-left: 25px;
   font-size: 40px;
 color:  #333
 }
@@ -24,17 +24,15 @@ font-size: 25px;
 
 
 
-#btnn {
+.btn {
   color: white;
   /* font: 15px Futura, sans-serif; */
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
   align-self: center;
-  /* background: #8B4513; */
   background: #333;
   margin: 15px 0px 0px;
   padding: 10px 25px
-
 }
 
 
@@ -60,23 +58,11 @@ font-size: 25px;
   background-size: 225px
 }
 
-
-
-#btn {
-  display: inline-block;
-  width:  150px;
-  background-color: #d3d3d3;
-  border-radius:  10px;
-  text-align:  center;
-  box-shadow: 1px #d3d3d3;
-  clear:  both;
-  text-align: center;
-}
-
 label, select {
   font-size: 1em;
 }
 
+/* START FOOTER */
 footer {
   position: relative;
   margin-top: 30px;
@@ -93,7 +79,7 @@ footer {
   color: black;
 }
 
-
+/* END FOOTER */
 
 /* NAV */
 
@@ -101,7 +87,7 @@ footer {
   /* The image used */
   /* background-image: url("https://colorlib.com/wp/wp-content/uploads/sites/2/4_ice-cream-websites.jpg.webp"); */
   background-image: url("logo2.PNG");
-  min-height: 410px;
+  min-height: 400px;
 
   /* Center and scale the image nicely */
   background-position: center;

@@ -1,0 +1,35 @@
+{{!-- START NAVBAR --}}
+<div class="row">
+   <div class="col">
+      <div class="bg-img">
+         <div class="container">
+            <div class="topnav">
+               <a href="#home">Home</a>
+               <a href="/login-form">Login</a>
+               <a href="#about">About</a>
+               <a href="#contact">Contact</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{{!-- END NAVBAR --}}
+<div class="row">
+   <div class="col">
+      <br>
+      <h2 id="ptitle"> Welcome to Multiscream!</h2>
+      <br>    
+               {{!-- Manager button --}}
+
+               <form action="/login-form" method="GET">
+                  <button id="btnn" class="btn">SIGN IN AS A CUSTOMER</button>
+               </form>
+         
+               {{!-- Customr button --}}
+
+               <form action="/login-form" method="GET">
+                  <button id="btnn" class="btn">SIGN IN AS A MANAGER</button>
+               </form>
+<br>
+   </div>
+</div>

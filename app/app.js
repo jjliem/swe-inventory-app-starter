@@ -145,6 +145,13 @@ app.post('/login', async (req, res) => {
     }
 });
 
+//HOME ROUTE -------------------------------------------------------------------------------------
+//View form to login
+app.get('', (req, res) => {
+    res.render('homeform')
+});
+
+
 
 
 app.listen(PORT, () => {

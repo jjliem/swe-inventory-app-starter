@@ -5,7 +5,7 @@
 			<div class="container">
 				<div class="topnav">
 					<a href="/brands">Home</a>
-					<a href="/login-form">Login</a>
+					{{!-- <a href="/login-form">Login</a> --}}
 					<a href="/new-flavor-form">Add New Flavor</a>
 					<a href="#about">About</a>
 					<a href="#contact">Contact</a>
@@ -33,20 +33,22 @@
 
 						<h3>Price: ${{this.price}} </h3>
 
+						<h3>In Stock: {{this.quantity}} </h3>
+
+						{{!-- delete button --}}
+
+						<form action="/delete/{{this.id}}" method="POST">
+							<button class="btn">Delete</button>
+						</form>
+
+						{{!-- update button --}}
+
+						<form action="/update-flavor-form/{{this.id}}" method="GET">
+							<button class="btn">Update</button>
+						</form>
+
 					</div>
 				</div>
-
-				{{!-- delete button --}}
-
-				<form action="/delete/{{this.id}}" method="POST">
-					<button id="btnn" class="btn">Delete</button>
-				</form>
-
-				{{!-- update button --}}
-
-				<form action="/update-flavor-form/{{this.id}}" method="GET">
-					<button id="btnn" class="btn">Update</button>
-				</form>
 
 			</article>
 			{{/each}}
