@@ -8,7 +8,7 @@
 					{{!-- <a href="/login-form">Login</a> --}}
 					<a href="#about">About</a>
 					<a href="#contact">Contact</a>
-					<a href="#contact">Cart <span class="badge badge-light">0</span>
+					<a href="#contact">Cart <span id="badge" class="badge badge-light"></span>
 					</a>
 
 				</div>
@@ -35,9 +35,7 @@
 						<h3>Price: ${{this.price}} </h3>
 
 						{{!-- TODO: Write add to cart functionality --}}
-						<form action="/add-cart" method="POST">
-							<button id="btnn" class="btn">Add To Cart <i class="fas fa-cart-plus"></i> </button>
-						</form>
+						<button id="add-btn" class="btn">Add To Cart <i class="fas fa-cart-plus"></i> </button>
 
 					</div>
 				</div>
