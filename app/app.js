@@ -84,7 +84,7 @@ app.post('/new-flavor', async (req, res) => {
     const foundNewFlavor = await Flavor.findByPk(newFlavor.id)
     //if new flavor was created, send 201 status
     if (foundNewFlavor) {
-        res.status(201).send('New flavor success')
+        res.redirect('/brands/' + newFlavor.BrandId);
     } else {
         console.error('Flavor not created')
     }
@@ -150,8 +150,6 @@ app.post('/login', async (req, res) => {
 app.get('', (req, res) => {
     res.render('homeform')
 });
-
-
 
 
 app.listen(PORT, () => {
